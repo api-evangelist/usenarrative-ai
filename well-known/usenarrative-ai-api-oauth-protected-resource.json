@@ -1,0 +1,1 @@
+{"resource":"https://api.usenarrative.ai/mcp","resource_name":"Narrative","authorization_servers":["https://eutmtswdgtwiwwygmcdh.supabase.co/auth/v1"],"scopes_supported":["openid","email","profile"]}

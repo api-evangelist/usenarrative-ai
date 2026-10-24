@@ -1,25 +1,86 @@
 aid: usenarrative-ai
+
 name: Usenarrative
-description: 'Usenarrative is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by y-combinator) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://usenarrative.ai/og.jpg
+
+description: 'Usenarrative (operating as Narrative) provides an AI-powered video editing platform that automates cutting, stitching, and enhancing footage based on user prompts. Users can upload raw video, describe the desired final edit, and the AI generates a polished video with transitions, music, and captions. The service offers a web app and mobile apps for iOS, targeting creators, marketers, and businesses seeking fast video production without manual editing expertise. Narrative emphasizes ease of use, rapid turnaround, and AI-driven creativity.'
+
 url: https://raw.githubusercontent.com/api-evangelist/usenarrative-ai/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-24'
+
 modified: '2026-10-24'
+
 tags:
 - Company
-apis: []
+- AI
+- Video Editing
+- SaaS
+- Creator Tools
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+common:
+- type: WellKnown
+  url: well-known/usenarrative-ai-well-known.yml
+- type: Hosts
+  url: hosts/usenarrative-ai-hosts.yml
+- type: Vendors
+  url: vendors/usenarrative-ai-vendors.yml
+- type: Login
+  url: https://usenarrative.ai/login
+- type: Documentation
+  url: https://dev.usenarrative.ai/
+- type: DomainSecurity
+  url: security/usenarrative-ai-domain-security.yml
+- type: Website
+  url: https://usenarrative.ai
+- type: Blog
+  url: https://usenarrative.ai/blog
+- type: Support
+  url: https://usenarrative.ai/support
+- type: TermsOfService
+  url: https://usenarrative.ai/terms
+- type: PrivacyPolicy
+  url: https://usenarrative.ai/privacy
+
+apis: []
+
 x-backed-by:
 - y-combinator
-common:
-- type: Website
-  url: http://www.usenarrative.ai
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  method: derived
+  generated: '2026-10-24'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company serves an API surface but requires credentials before any description of it can be read
+  evidence:
+  - url: https://api.usenarrative.ai/mcp
+    status: 401
+  - url: https://api.usenarrative.ai/v1/graphql
+    status: 401
+  - url: http://www.usenarrative.ai
+    status: 200
+x-enrichment:
+  date: '2026-10-24'
+  status: enriched
+  artifacts_added: 10
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

@@ -1,0 +1,29 @@
+generated: '2026-10-24'
+method: probed
+source:
+  - https://usenarrative.ai/privacy
+signals:
+  data_subject_request:
+    evidence:
+      - source: https://usenarrative.ai/privacy
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "How Narrative, the AI video editor, handles your footage, your prompts and your account data: what we collect, who processes it, how long we keep it and how to have it deleted."
+        note: Provides right to request deletion of personal data.
+    posture: provides deletion rights
+  subprocessors:
+    evidence:
+      - source: https://usenarrative.ai/privacy
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "We share data with the companies that run parts of the service for us, and with nobody else for their own purposes. We never sell it. The AI providers below are the third parties your footage and prompts reach; the app asks for your permission before any of it is sent, and you can withdraw it by deleting your projects or your account."
+        note: Lists third‑party processors (OpenRouter, OpenAI, Anthropic, Google, Deepgram, AWS, Modal).
+    posture: disclosed subprocessors
+  ai_transparency:
+    evidence:
+      - source: https://usenarrative.ai/privacy
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "We do not use your footage, your prompts or your edits to train our own models, and our contracts with the model providers we use prohibit them from training on what we send. If that ever changes it will be a choice you opt into, not a default, and we will say so here first."
+        note: States that user data is not used to train models.
+    posture: transparent about AI training
